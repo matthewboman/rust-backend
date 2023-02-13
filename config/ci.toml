@@ -1,0 +1,5 @@
+# CI testing
+
+[database]
+name = "xor_rust_test"
+url = "postgresql://postgres:example@localhost:5432/xor_rust_test"

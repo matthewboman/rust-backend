@@ -1,0 +1,24 @@
+# Default settings
+
+run_mode = "development"
+port = 0
+
+[database]
+hostname = "localhost"
+username = "postgres"
+password = "example"
+name = "xor_rust"
+port = 1701
+url = "postgresql://postgres:example@localhost:5432/xor_rust"
+debug = false
+
+[database.pool]
+
+# [redis]
+# url = "localhost:6379"
+
+[auth]
+url = "dev-4u1srjt4i35rrytk.us.auth0.com"
+audience = "localhost"
+
+[auth.client]

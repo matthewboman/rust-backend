@@ -1,0 +1,8 @@
+# Local testing
+
+port = 0
+run_mode = "test"
+
+[database]
+name = "xor_rust_test"
+url = "postgresql://<USER>:<PASSWORD>@localhost:5432/xor_rust_test"

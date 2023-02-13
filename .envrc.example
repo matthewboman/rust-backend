@@ -1,0 +1,7 @@
+# Needed for Docker Compose and for the sqlx-cli
+export DATABASE_HOSTNAME=localhost
+export DATABASE_USERNAME=postgres
+export DATABASE_PASSWORD=example
+export DATABASE_NAME=xor_rust
+export DATABASE_PORT=5432
+export DATABASE_URL=postgresql://postgres:example@localhost:5432/xor_rust

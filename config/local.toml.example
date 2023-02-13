@@ -1,0 +1,15 @@
+# Local development
+
+port = 3000
+
+[database]
+hostname = "localhost"
+url = "postgresql://<USER>:<PASSWORD>@localhost:5432/xor_rust"
+debug = false
+
+[redis]
+url = "localhost:6379"
+
+[auth.client]
+id = "client_id"
+secret = "client_secret"

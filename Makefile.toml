@@ -1,0 +1,50 @@
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+
+[config]
+main_project_member = "apps/api"
+default_to_workspace = false
+
+[tasks.dev]
+env = { "RUST_LOG" = "info,sqlx::query=warn" }
+command = "cargo"
+args = ["run", "--bin", "xor-api"]
+watch = true
+
+[tasks.db-create]
+cwd = "./"
+command = "sqlx"
+args = ["db", "create"]
+
+[tasks.db-migrate]
+cwd = "./"
+command = "sqlx"
+args = ["migrate", "run"]
+
+[tasks.db-reset]
+cwd = "./"
+command = "sqlx"
+args = ["db", "reset"]
+
+[tasks.docker]
+cwd = "./"
+command = "docker-compose"
+args = ["-f", "docker-compose.yml", "${@}"]
+
+[tasks.docker-api]
+cwd = "./apps/api"
+command = "docker-compose"
+args = [
+    "-f",
+    "../../docker-compose.yml",
+    "-f",
+    "docker-compose.app.yml",
+    "--env-file",
+    "../../.env",
+    "${@}",
+]
+
+[tasks.schema]
+cwd = "./"
+command = "cargo"
+args = ["run", "--bin", "xor-schema"]
